@@ -1,0 +1,43 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="title">
+    <text class='title-info'>门店：</text>
+    <view class='address'>
+      <view class="address-sele" bindtap="goMap">
+        <text class="text">{{storeName}}</text>
+      </view>
+    </view>
+    <text class="now-time">{{'10:00'}}进行中</text>
+    <text class="next-time">下一场{{'12:00'}}</text>
+  </view>
+  <view class="shopping">
+    <view class="shop-time">
+      <text class="shop-time-txt">距离结束还有</text>
+      <view class="time">
+        <text class="time-txt">{{'01'}}</text>
+        <text class="time-space"></text>
+        <text class="time-txt">{{'22'}}</text>
+        <text class="time-space"></text>
+        <text class="time-txt">{{'34'}}</text>
+      </view>
+    </view>
+    <view class="shop-list">
+      <view class="shop-info">
+        <view class="good-img">
+          <image style="width: 150rpx; height: 150rpx; background-color: #eeeeee;" src=""></image>
+        </view>
+        <view class="good-info">
+          <view class="good-title">9.9元洗车券 每天每家门店发放4张 请选择好门店进行抢券</view>
+          <view class="good-num">
+            <text class="txt">每人限抢一张</text>
+          </view>
+          <view class="good-take">
+            <text class="go-txt" >剩余4/4</text>
+            <view class="go-btn" >立即抢券</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+

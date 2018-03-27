@@ -1,0 +1,12 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/store/store"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "light",
+    "navigationBarTitleText": "天天抢券",
+    "navigationBarTextStyle":"black"
+  }
+}
