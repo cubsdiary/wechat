@@ -53,6 +53,8 @@
   margin-top: 26rpx;
   border-radius: 5rpx;
   margin-right: 40rpx;
+  font-size: 24rpx;
+  color: #fff;
 }
 .code .reset.disable{
   background-color: #999;

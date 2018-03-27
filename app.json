@@ -1,10 +1,12 @@
 {
   "pages":[
+    "pages/set_password/password",
     "pages/register/register",
     "pages/index/index",
     "pages/userphone/userphone",
     "pages/login/login",
     "pages/store/store"
+    
   ],
   "window":{
     "backgroundTextStyle":"light",

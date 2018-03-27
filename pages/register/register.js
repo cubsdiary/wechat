@@ -4,12 +4,14 @@ Page({
    * 页面的初始数据
    */
   data: {
-    onceCode: false,
+    onceCode: true,
     submitBtn: false,
     userPhone: null,
     inputCode: null,
     focus: true,
-    password: true
+    password: true,
+    codeText: '获取验证码',
+    timer: 60
   },
 
   /**
@@ -21,16 +23,46 @@ Page({
     })
   },
   getCode: function (e) {
-    this.setData({
-      onceCode: true
-    })
+    var _self = this;
+    var time = null;
+    if (this.data.onceCode) {
+      _self.setData({
+        onceCode: false,
+        codeText: _self.data.timer + 'S后重发'
+      })
+      time = setInterval(() => {
+        if (_self.data.timer < 1) {
+          _self.setData({
+            timer: 60,
+            onceCode: true,
+            codeText: '获取验证码'
+          })
+          clearInterval(time)
+        } else {
+          _self.setData({
+            codeText: (_self.data.timer--) + 'S后重发'
+          })
+        }
+      }, 1000)
+    }
   },
-  getValue: function () {
-    
+  getValue: function (e) {
+    this.setData({
+      inputCode: e.detail.value
+    })
+    if (e.detail.cursor == 6) {
+      this.setData({
+        submitBtn: true
+      })
+    } else {
+      this.setData({
+        submitBtn: false
+      })
+    }
   },
   goRegister: function () {
     wx.reLaunch({
-      url: '../index/index',
+      url: '../set_password/password'
     })
   },
   onLoad: function (options) {
