@@ -33,7 +33,7 @@
           </view>
           <view class="good-take">
             <text class="go-txt" >剩余4/4</text>
-            <view class="go-btn" >立即抢券</view>
+            <view class="go-btn" bindtap="getVoucher">立即抢券</view>
           </view>
         </view>
       </view>

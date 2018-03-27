@@ -16,6 +16,11 @@ Page({
       url: '../store/store'
     })
   },
+  getVoucher: function () {
+    wx.navigateTo({
+      url: '../userphone/userphone'
+    })
+  },
   onLoad: function () {
     var _self = this
     wx.getStorage({

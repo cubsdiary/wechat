@@ -20,7 +20,7 @@ Page({
     })
   },
   seleStore: function () {
-    wx.navigateTo({
+    wx.navigateBack({
       url: '../index/index'
     })
     wx.setStorage({
