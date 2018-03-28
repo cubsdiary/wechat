@@ -9,7 +9,10 @@ Page({
     phone: null,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     storeName: null,
-    checkStoreId: null
+    checkStoreId: null,
+    closeSuccess: false,
+    closeError: false,
+    flag: 1
   },
   goMap: function () {
     wx.navigateTo({
@@ -17,15 +20,39 @@ Page({
     })
   },
   getVoucher: function () {
-    wx.navigateTo({
-      url: '../userphone/userphone'
+    // wx.navigateTo({
+    //   url: '../userphone/userphone'
+    // })
+    if (this.data.flag == 1) {
+      this.setData({
+        closeError: false,
+        closeSuccess: true,
+        flag: 2
+      })
+    } else {
+      this.setData({
+        closeError: true,
+        closeSuccess: false,
+        flag: 1
+      })
+    }
+  },
+  closeSuccessMask: function () {
+    this.setData({
+      closeSuccess: false
     })
   },
-  onLoad: function () {
+  closeErrorMask: function () {
+    this.setData({
+      closeError: false
+    })
+  },
+  onLoad: function (options) {
     var _self = this
     wx.getStorage({
       key: 'seleStoreId',
       success: function (res) {
+        console.log(res)
         _self.setData({
           checkStoreId: res.data
         })
@@ -77,5 +104,21 @@ Page({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
     })
+  },
+  onShareAppMessage: function (res) {
+    if (res.from === 'button') {
+      // 来自页面内转发按钮
+      console.log(res.target)
+    }
+    return {
+      title: '自定义转发标题',
+      path: '/page/user?id=123',
+      success: function (res) {
+        // 转发成功
+      },
+      fail: function (res) {
+        // 转发失败
+      }
+    }
   }
 })

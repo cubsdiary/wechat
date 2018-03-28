@@ -20,13 +20,13 @@ Page({
     })
   },
   seleStore: function () {
-    wx.navigateBack({
-      url: '../index/index'
-    })
     wx.setStorage({
       key: 'seleStoreId',
       data: this.data.checkIndex
     });
+    wx.reLaunch({
+      url: '../index/index'
+    })
   },
   callDz: function (e) {
     var phone = e.currentTarget.dataset.item.phone

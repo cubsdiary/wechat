@@ -6,7 +6,7 @@
     </view>
     <view class="pwd-input">
       <input class="input" password="{{password}}" value="{{inputPwd}}" placeholder="请输入密码" placeholder-class="placeholder" maxlength="16" focus="{{focus}}" bindinput="getValue"/>
-      <view class="{{'reset'}}" capture-catch:tap="seenValue"><icon type="clear" size="20" color="#999999"/></view>
+      <view class="{{password ? 'reset' : 'reset unseen'}}" bindtap="seenValue"></view>
     </view>
   </view>
   <view class="{{submitBtn ? 'submit' : 'submit disable'}}" bindtap="goLogin">登录</view>

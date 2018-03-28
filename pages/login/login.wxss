@@ -50,6 +50,13 @@
   align-items: center;
   justify-content: center;
   margin-top: 11rpx;
+  background-image: url('https://www.gt1.shop/images/unseen@2x.png');
+  background-size: 32rpx 32rpx;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.pwd-input .reset.seen{
+  background-image: url('https://www.gt1.shop/images/seen@2x.png');
 }
 .submit{
   width: 710rpx;
